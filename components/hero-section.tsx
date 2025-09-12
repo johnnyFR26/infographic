@@ -32,7 +32,7 @@ export function HeroSection({ scrollY }: HeroSectionProps) {
         className="absolute inset-0 opacity-10"
         style={{
           transform: `translateY(${scrollY * 0.5}px)`,
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23ffffff' fillOpacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23059669' fillOpacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }}
       />
 
@@ -54,8 +54,8 @@ export function HeroSection({ scrollY }: HeroSectionProps) {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 text-center z-10">
-        <Card className="bg-white/10 backdrop-blur-md border-white/20 p-8 max-w-4xl mx-auto animate-fade-in-up">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 text-white text-balance">
+        <Card className="bg-card backdrop-blur-md border p-8 max-w-4xl mx-auto animate-fade-in-up">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 text-balance">
             Políticas de
             <span className="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
               Segurança
@@ -63,7 +63,7 @@ export function HeroSection({ scrollY }: HeroSectionProps) {
             da Informação
           </h1>
 
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto text-pretty">
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-pretty">
             Um guia interativo sobre as principais políticas que protegem os ativos digitais da sua organização
           </p>
 
@@ -76,11 +76,11 @@ export function HeroSection({ scrollY }: HeroSectionProps) {
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-white/10 backdrop-blur-sm rounded-lg p-4 animate-fade-in-up"
+                className="bg-muted backdrop-blur-sm rounded-lg p-4 animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className="text-3xl mb-2">{item.icon}</div>
-                <div className="text-white/80 text-sm font-medium">{item.label}</div>
+                <div className="text-sm font-medium">{item.label}</div>
               </div>
             ))}
           </div>

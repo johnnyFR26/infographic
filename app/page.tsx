@@ -99,8 +99,8 @@ export default function SecurityInfographic() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Fixed Navigation */}
       <div className="fixed top-4 right-4 z-50 flex gap-2">
-        <NavigationDots total={policies.length + 1} active={activeSection} onNavigate={scrollToSection} />
         <ThemeToggle />
+        <NavigationDots total={policies.length + 1} active={activeSection} onNavigate={scrollToSection} />
       </div>
 
       {/* Hero Section */}
