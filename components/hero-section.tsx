@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Card } from "@/components/ui/card"
+import Link from "next/link"
 
 interface HeroSectionProps {
   scrollY: number
@@ -13,6 +14,13 @@ export function HeroSection({ scrollY }: HeroSectionProps) {
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  const scrollToSection = (index: number) => () => {
+    const section = document.querySelector(`[data-section="${index}"]`)
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
+    }
+  }
 
   if (!mounted) return null
 
@@ -36,9 +44,8 @@ export function HeroSection({ scrollY }: HeroSectionProps) {
         }}
       />
 
-      {/* Floating Security Icons */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-20 text-6xl animate-float" style={{ animationDelay: "0s" }}>
+        <div className="absolute top-20 left-20 text-6xl animate-float" style={{ animationDelay: "0s" }} >
           🔒
         </div>
         <div className="absolute top-40 right-32 text-4xl animate-float" style={{ animationDelay: "1s" }}>
@@ -78,6 +85,7 @@ export function HeroSection({ scrollY }: HeroSectionProps) {
                 key={index}
                 className="bg-muted backdrop-blur-sm rounded-lg p-4 animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.2}s` }}
+                onClick={scrollToSection(index +1)}
               >
                 <div className="text-3xl mb-2">{item.icon}</div>
                 <div className="text-sm font-medium">{item.label}</div>
