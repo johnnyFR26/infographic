@@ -7,6 +7,9 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Security infographic',
   description: 'Infográfico interativo sobre protocolos de segurança web',
+  icons: {
+    icon: "/favicon.ico"
+  }
 }
 
 export default function RootLayout({
