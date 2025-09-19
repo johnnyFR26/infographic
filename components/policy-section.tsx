@@ -4,9 +4,11 @@ import { ReactNode, useEffect, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Shield, Database, FileText, Building, ClipboardCheck, XCircle, Globe, Mail, Monitor, ChevronDown } from "lucide-react"
+import Link from "next/link"
 
 interface Policy {
   id: string
+  page: string
   title: string
   icon: string
   description: string
@@ -91,7 +93,8 @@ function toggleAccordion(i: number) {
 
   return (
     <section data-section={index} className="min-h-screen flex items-center py-20 relative overflow-hidden">
-      {/* Background Pattern */}
+      {/* Background Pattern */}.
+
       <div
         className="absolute inset-0 opacity-5"
         style={{
@@ -106,9 +109,11 @@ function toggleAccordion(i: number) {
           <div
             className={`space-y-6 ${isEven ? "" : "lg:col-start-2"} ${isVisible ? "animate-slide-in-left" : "opacity-0"}`}
           >
+            <Link href={policy.page}>
             <Badge variant="secondary" className="text-sm font-medium">
               Política {index}
             </Badge>
+            </Link>
 
             <h2 className="text-4xl md:text-5xl font-bold text-balance">{policy.title}</h2>
 
@@ -141,9 +146,11 @@ function toggleAccordion(i: number) {
             <Card className={`relative overflow-hidden ${isActive ? "animate-pulse-glow" : ""}`}>
               <CardHeader className={`bg-gradient-to-br ${policy.color} text-white`}>
                 <CardTitle className="flex items-center gap-4 text-2xl">
+                  <Link href={policy.page}>                  
                   <div className="p-3 bg-white/20 rounded-full">
                     <IconComponent className="w-8 h-8" />
                   </div>
+                  </Link>
                   <span className="text-balance">{policy.title}</span>
                 </CardTitle>
               </CardHeader>

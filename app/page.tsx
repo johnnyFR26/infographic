@@ -9,6 +9,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 const policies = [
   {
     id: "access-control",
+    page: "/access",
     title: "Política de Controle de Acesso",
     icon: "🔐",
     description: "Gerenciamento seguro de identidades e permissões de usuários",
@@ -64,6 +65,7 @@ const policies = [
   },
   {
     id: "backup-recovery",
+    page: "backup",
     title: "Política de Backup e Recuperação",
     icon: "💾",
     description: "Proteção e recuperação de dados críticos da organização",
@@ -94,6 +96,7 @@ const policies = [
   },
   {
     id: "acceptable-use",
+    page: "/acceptable",
     title: "Política de Uso Aceitável",
     icon: "📋",
     description: "Diretrizes para uso apropriado dos recursos de TI",
@@ -144,6 +147,7 @@ const policies = [
   },
   {
     id: "physical-security",
+    page: "/phisycs",
     title: "Política de Segurança Física",
     icon: "🏢",
     description: "Proteção física de instalações e equipamentos",
