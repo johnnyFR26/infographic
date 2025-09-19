@@ -15,6 +15,7 @@
   --primary-foreground: #ffffff;
   --secondary: #10b981;
   --secondary-foreground: #ffffff;
+  --hover: #0fe89f;
   --muted: #f8fafc;
   --muted-foreground: #475569;
   --accent: #10b981;
@@ -51,6 +52,7 @@
   --primary-foreground: #0f172a;
   --secondary: #059669;
   --secondary-foreground: #f1f5f9;
+  --hover: #09cd8c;
   --muted: #334155;
   --muted-foreground: #94a3b8;
   --accent: #10b981;
@@ -204,4 +206,10 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.bg-hover:hover{
+  cursor: pointer;
+  background-color: var(--hover);
+  transition: .2s;
 }
