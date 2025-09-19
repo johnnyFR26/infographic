@@ -213,3 +213,21 @@
   background-color: var(--hover);
   transition: .2s;
 }
+
+.hover:hover{
+  cursor: pointer;
+}
+
+li{
+  margin-top: 10px;
+}
+ul{
+  margin-bottom: 10px;
+  list-style:initial;
+}
+span.description{
+  color:#888888
+}
+li::marker{
+  color: var(--accent);
+}

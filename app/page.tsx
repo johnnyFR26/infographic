@@ -13,11 +13,53 @@ const policies = [
     icon: "🔐",
     description: "Gerenciamento seguro de identidades e permissões de usuários",
     examples: [
-      "Autenticação multifator (MFA) obrigatória",
-      "Princípio do menor privilégio",
-      "Revisão periódica de acessos",
-      "Controle de acesso baseado em funções (RBAC)",
+      "Processos de Login Seguro",
+      "Senhas Fortes e Seguras",
+      "Autentificação Multifator (MFA)",
+      "Controle baseado em funções (RBAC)",
     ],
+    exampleDescription:  [(<p>
+      <b>Autenticação Robusta: Implementação de sistemas de login que verificam a identidade do usuário através de múltiplos fatores.</b>
+      <br/>
+      <ul>
+        <li>Verificação de credenciais (usuário e senha)</li>
+        <li>Bloqueio automático após tentativas falhadas</li>
+        <li>Registro de logs de acesso</li>
+        <li>Timeout de sessão por inatividade</li></ul>
+        </p>),
+        (<p>
+      <b>Critérios de Complexidade:</b>
+      <br/>
+      <ul>
+        <li>Mínimo de 12 caracteres</li>
+        <li>Combinação de letras maiúsculas e minúsculas</li>
+        <li>Números e símbolos especiais</li>
+        <li>Evitar informações pessoais</li>
+        <li>Troca obrigatória a cada 90 dias</li>
+        <li>Histórico de senhas para evitar reutilização</li>
+      </ul>
+      </p>),
+        (<p>
+      <b>Autenticação Multifator (MFA)</b>
+      <br/>
+      <ul>
+        <li><b>Algo que você sabe:</b> Senha ou PIN</li>
+        <li><b>Algo que você tem:</b> Token, Smartphone, Cartão</li>
+        <li><b>Algo que você é:</b> Biometria (digital, facial)</li>
+      </ul>
+      <span className="description">A MFA reduz em 99.9% o risco de comprometimento de contas.</span>
+      </p>),
+        (<p>
+      <b>Princípio do Menor Privilégio: Usuários recebem apenas as permissões mínimas necessárias para executar suas funções.</b>
+      <br/>
+      <ul>
+        <li>Definição de perfis de acesso por cargo</li>
+        <li>Revisão periódica de permissões</li>
+        <li>Segregação de funções críticas</li>
+        <li>Aprovação para acessos especiais</li>
+      </ul>
+      </p>),
+        ],
     color: "from-blue-500 to-cyan-500",
   },
   {
@@ -26,11 +68,28 @@ const policies = [
     icon: "💾",
     description: "Proteção e recuperação de dados críticos da organização",
     examples: [
-      "Backup automático diário (regra 3-2-1)",
-      "Testes de recuperação mensais",
-      "Armazenamento em múltiplas localizações",
-      "Criptografia de dados em repouso",
+      "Tipos de Backup",
+      "Testes de recuperação",
     ],
+    exampleDescription:[(<p>
+      <ul>
+        <li><b>Backup Completo:</b>Cópia integral de todos os dados</li>
+        <li><b>Backup Incremental:</b>Apenas dados alterados desde o último backup</li>
+        <li><b>Backup Diferencial:</b>Dados alterados desde o último backup completo</li>
+        <li><b>Backup Contínuo:</b>Replicação em tempo real</li>
+        </ul>
+        </p>),
+        (<p>
+          <b>Validação Regular:</b>
+      <ul>
+          <li>Testes mensais de restauração</li>
+          <li>Verificação da integridade dos dados</li>
+          <li>Medição do tempo de recuperação (RTO)</li>
+          <li>Documentação dos procedimentos</li>
+          <li>Simulação de cenários de desastre</li>
+        </ul>
+        </p>),
+        ],
     color: "from-green-500 to-emerald-500",
   },
   {
@@ -39,11 +98,48 @@ const policies = [
     icon: "📋",
     description: "Diretrizes para uso apropriado dos recursos de TI",
     examples: [
-      "Proibição de software não autorizado",
-      "Uso responsável da internet corporativa",
-      "Proteção de informações confidenciais",
-      "Relatório de incidentes de segurança",
+      "Uso da Internet",
+      "Segurança de E-mail",
+      "Uso de dispositivos",
+      "Manuseio de Dados",
     ],
+    exampleDescription:[(<p>
+      <b>Diretrizes para navegação segura:</b>
+      <ul>
+        <li>Evitar sites suspeitos ou não confiáveis</li>
+        <li>Não baixar arquivos de fontes desconhecidas</li>
+        <li>Verificar URLs antes de clicar em links</li>
+        <li>Usar navegadores atualizados com proteção ativa</li>
+      </ul>
+        </p>),
+        (<p>
+      <b>Boas práticas para e-mail corporativo:</b>
+      <ul>
+        <li>Verificar remetente antes de abrir anexos</li>
+        <li>Não responder a e-mails de phishing</li>
+        <li>Usar criptografia para informações sensíveis</li>
+        <li>Reportar e-mails suspeitos ao TI</li>
+      </ul>
+        </p>),
+        (<p>
+      <b>Políticas para equipamentos corportativos:</b>
+      <ul>
+        <li>Manter dispositivos fisicamente seguros</li>
+        <li>Não permitir uso pessoal excessivo</li>
+        <li>Instalar apenas software aprovado</li>
+        <li>Reportar problemas técnicos imediatamente</li>
+      </ul>
+        </p>),
+        (<p>
+      <b>Proteção de informações corporativas:</b>
+      <ul>
+        <li>Classificar dados conforme sensibilidade</li>
+        <li>Não compartilhar informações confidenciais</li>
+        <li>Usar canais seguros para transmissão</li>
+        <li>Descartar dados de forma segura</li>
+      </ul>
+        </p>),
+        ],
     color: "from-purple-500 to-pink-500",
   },
   {
@@ -52,11 +148,52 @@ const policies = [
     icon: "🏢",
     description: "Proteção física de instalações e equipamentos",
     examples: [
-      "Controle de acesso às instalações",
-      "Monitoramento por câmeras de segurança",
-      "Proteção contra desastres naturais",
-      "Descarte seguro de equipamentos",
+      "Controle de Acesso Físico",
+      "Sistema de vigilância",
+      "Proteção Elétrica",
+      "Segurança de Equipamentos",
     ],
+    exampleDescription:[(<p>
+      <b>Sistemas de controle de entrada:</b>
+      <br/>
+      <ul>
+        <li>Cartões de acesso com RFID/NFC</li>
+        <li>Biometria (impressão digital, facial)</li>
+        <li>Códigos PIN para áreas específicas</li>
+        <li>Registro de todos os acessos</li>
+        <li>Escolta obrigatória para visitantes</li>
+      </ul>
+        </p>),(<p>
+      <b>Monitoramento por CCTV:</b>
+      <br/>
+      <ul>
+        <li>Câmeras HD em pontos estratégicos</li>
+        <li>Gravação contínua por 90 dias</li>
+        <li>Monitoramento remoto 24/7</li>
+        <li>Detecção de movimento inteligente</li>
+        </ul>
+        </p>),(<p>
+      <b>Sistemas de energia ininterrupta:</b>
+      <br/>
+      <ul>
+        <li>UPS com autonomia de 30 minutos</li>
+        <li>Gerador diesel para emergências</li>
+        <li>Proteção contra surtos elétricos</li>
+        <li>Circuitos elétricos redundantes</li>
+        <li>Monitoramento de qualidade da energia</li>
+      </ul>
+        </p>),(<p>
+      <b>Proteção de hardware e dispositivos:</b>
+      <br/>
+      <ul>
+        <li>Racks e gabinetes com fechadura</li>
+        <li>Cabos de segurança para laptops</li>
+        <li>Inventário e etiquetagem de ativos</li>
+        <li>Política de mesa limpa</li>
+        <li>Descarte seguro de equipamentos</li>
+      </ul>
+        </p>),
+        ],
     color: "from-orange-500 to-red-500",
   },
 ]

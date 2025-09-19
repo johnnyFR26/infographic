@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { ReactNode, useEffect, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Shield, Database, FileText, Building } from "lucide-react"
@@ -11,6 +11,7 @@ interface Policy {
   icon: string
   description: string
   examples: string[]
+  exampleDescription: ReactNode
   color: string
 }
 
@@ -53,6 +54,41 @@ export function PolicySection({ policy, index, scrollY, isActive }: PolicySectio
   const isEven = index % 2 === 0
   const parallaxOffset = scrollY * 0.1
 
+  type AccordionItemProps = {
+  title: string;
+  content: ReactNode;
+  isOpen: boolean;
+  onToggle: () => void;
+};
+
+function AccordionItem({ title, content, isOpen, onToggle }: AccordionItemProps) {
+  return (
+    <div className="items-center gap-3 p-3 rounded-lg bg-card/50 hover:bg-card/80 backdrop-blur-sm border border-border/50">
+      <button
+        className="hover w-full flex justify-between items-center px-4 py-3 text-left font-medium transition"
+        onClick={onToggle}
+      >
+        <span className="text-card-foreground">{title}</span>
+        <span className={`transform transition-transform ${isOpen ? "rotate-180" : ""}`}>
+          ▼
+        </span>
+      </button>
+
+      {isOpen && (
+        <div className="px-4 py-3 border-t">
+          {content}
+        </div>
+      )}
+    </div>
+  );
+}
+
+const [openAccordions, setOpenAccordions] = useState<{[key: number]: boolean}>({})
+
+function toggleAccordion(i: number) {
+  setOpenAccordions(prev => ({ ...prev, [i]: !prev[i] }))
+}
+
   return (
     <section data-section={index} className="min-h-screen flex items-center py-20 relative overflow-hidden">
       {/* Background Pattern */}
@@ -82,13 +118,18 @@ export function PolicySection({ policy, index, scrollY, isActive }: PolicySectio
               <h3 className="text-2xl font-semibold text-primary">Exemplos de Implementação:</h3>
               <div className="grid gap-3">
                 {policy.examples.map((example, exampleIndex) => (
-                  <div
-                    key={exampleIndex}
-                    className={`flex items-center gap-3 p-3 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
-                    style={{ animationDelay: `${exampleIndex * 0.1}s` }}
+                  <div 
+                  className={`${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+                  style={{ animationDelay: `${exampleIndex * 0.1}s` }}
                   >
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-card-foreground">{example}</span>
+                    <AccordionItem
+                    title={example}
+                    /*@ts-ignore */
+                    content={policy.exampleDescription[exampleIndex]}
+                    key={exampleIndex}
+                    isOpen={openAccordions[exampleIndex]}
+                    onToggle={() => toggleAccordion(exampleIndex)}
+                    />
                   </div>
                 ))}
               </div>
