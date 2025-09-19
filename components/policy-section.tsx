@@ -3,7 +3,7 @@
 import { ReactNode, useEffect, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, Shield, Database, FileText, Building } from "lucide-react"
+import { CheckCircle, Shield, Database, FileText, Building, ClipboardCheck, XCircle, Globe, Mail, Monitor, ChevronDown } from "lucide-react"
 
 interface Policy {
   id: string
