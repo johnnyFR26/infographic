@@ -1,5 +1,5 @@
 "use client"
-import { ArrowRight, ChevronDown, Cloud, Database, HardDrive, Info, Key, Layers, LogIn, Smartphone, TestTube, Users } from "lucide-react";
+import { ArrowRight, ChevronDown, Cloud, Database, HardDrive, Info, Key, Layers, LogIn, Smartphone, TestTube, Users, Lock } from "lucide-react";
 import { useState } from "react";
 export default function Access(){
       const [expandedItems, setExpandedItems] = useState<string[]>([]);

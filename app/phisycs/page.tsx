@@ -1,5 +1,5 @@
 "use client"
-import { AlertTriangle, ArrowRight, Building, Camera, ChevronDown, Cloud, Database, DoorOpen, Eye, HardDrive, Info, Layers, TestTube, Thermometer, UserCheck, Zap } from "lucide-react";
+import { AlertTriangle, ArrowRight, Building, Camera, ChevronDown, Cloud, Database, DoorOpen, Eye, HardDrive, Info, Layers, TestTube, Thermometer, UserCheck, Zap, Lock } from "lucide-react";
 import { useState } from "react";
 export default function Phisycs(){
            const [expandedItems, setExpandedItems] = useState<string[]>([]);

@@ -1,5 +1,5 @@
 "use client"
-import { CheckCircle, ChevronDown, ClipboardCheck, FileText, Globe, Mail, Monitor, XCircle } from "lucide-react";
+import { CheckCircle, ChevronDown, ClipboardCheck, FileText, Globe, Mail, Monitor, XCircle, Lock } from "lucide-react";
 import { useState } from "react";
 
 export default function Acceptable(){

@@ -1,5 +1,5 @@
 "use client"
-import { ArrowRight, ChevronDown, Cloud, Database, HardDrive, Info, Layers, TestTube } from "lucide-react";
+import { ArrowRight, ChevronDown, Cloud, Database, HardDrive, Info, Layers, TestTube,Lock } from "lucide-react";
 import { useState } from "react";
 
 export default function Backup(){
